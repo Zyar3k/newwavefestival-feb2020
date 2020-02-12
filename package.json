@@ -4,6 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:Zyar3k/newwavefestival-feb2020.git",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
