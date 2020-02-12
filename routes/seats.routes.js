@@ -27,6 +27,7 @@ router.route('/seats').post((req, res) => {
   if(check == true){
     const newPost = {day: day, seat: seat, client: client, email: email, id: uuidv1()};
     db.seats.push(newPost);
+    req.io.emit('seatsUpdated', db.seats );
     res.json({message: 'OK'});
   }
 });
