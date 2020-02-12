@@ -11,6 +11,15 @@
   }
 }
 
+.freeSeats {
+  text-align: center; 
+
+  .free {
+    color: green;
+    font-weight: bold;
+  }
+}
+
 @media (max-width: 1200px) {
 
   .seats__seat {

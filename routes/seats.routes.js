@@ -5,6 +5,7 @@ const uuidv1 = require('uuid/v1');
 
 router.route('/seats').get((req, res) => {
   res.json(db.seats);
+  req.io.emit('seatsUpdated', db.seats);
 });
 
 router.route('/seats/:id').get((req, res) => {

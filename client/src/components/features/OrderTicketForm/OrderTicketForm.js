@@ -39,7 +39,7 @@ class OrderTicketForm extends React.Component {
 
   submitForm = async (e) => {
     const { order } = this.state;
-    const { addSeat, loadSeats } = this.props;
+    const { addSeat } = this.props;
 
     e.preventDefault();
 
@@ -54,7 +54,6 @@ class OrderTicketForm extends React.Component {
         },
         isError: false,
       });
-      loadSeats();
     } else {
       this.setState({ isError: true });
     }
@@ -93,7 +92,7 @@ class OrderTicketForm extends React.Component {
             </FormGroup>
             <FormGroup check>
               <Label check>
-                <Input required type="checkbox" /> I agree with <a href="#">Terms and conditions</a> and <a href="#">Privacy Policy</a>.
+                <Input required type="checkbox" /> I agree with <a href="#1">Terms and conditions</a> and <a href="#2">Privacy Policy</a>.
               </Label>
             </FormGroup>
             <Button color="primary" className="mt-3">Submit</Button>
