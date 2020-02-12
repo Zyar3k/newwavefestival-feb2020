@@ -5,7 +5,8 @@
   "repository": "git@github.com:Zyar3k/newwavefestival-feb2020.git",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build": "cd client && yarn install && yarn build"
   },
   "dependencies": {
     "cors": "^2.8.5",
