@@ -16,7 +16,7 @@ class SeatChooser extends React.Component {
 
   intervalLoader() {
     const { loadSeats } = this.props;
-    setInterval(loadSeats, 5000); //120000
+    setInterval(loadSeats, 120000);
   }
 
   intervalStopper() {
