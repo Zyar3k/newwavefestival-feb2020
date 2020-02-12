@@ -10,6 +10,19 @@ class SeatChooser extends React.Component {
     loadSeats();
   }
 
+  componentWillUnmount() {
+    this.intervalStopper();
+  }
+
+  intervalLoader() {
+    const { loadSeats } = this.props;
+    setInterval(loadSeats, 5000); //120000
+  }
+
+  intervalStopper() {
+    clearInterval(this.intervalLoader)
+  }
+
   isTaken = (seatId) => {
     const { seats, chosenDay } = this.props;
 
@@ -26,6 +39,8 @@ class SeatChooser extends React.Component {
   }
 
   render() {
+
+    this.intervalLoader();
 
     const { prepareSeat } = this;
     const { requests } = this.props;
