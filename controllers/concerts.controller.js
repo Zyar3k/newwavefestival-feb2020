@@ -27,8 +27,8 @@ exports.postAll = async (req, res) => {
 
   try {
 
-    const { id, performer, genre, price, day, image } = req.body;
-    const newConcert = new Concert({ id: id, performer: performer, genre: genre, price: price, day: day, image: image});
+    const { performer, genre, price, day, image } = req.body;
+    const newConcert = new Concert({  performer: performer, genre: genre, price: price, day: day, image: image});
     await newConcert.save();
     res.json({ message: 'OK' });
 
@@ -39,12 +39,12 @@ exports.postAll = async (req, res) => {
 };
 
 exports.updateOne = async (req, res) => {
-  const { id, performer, genre, price, day, image } = req.body;
+  const { performer, genre, price, day, image } = req.body;
 
   try {
-    const con = await(Concert.findById(req.params.id));
-    if(con) {
-      await Concert.updateOne({ _id: req.params.id }, { $set: { id: id, performer: performer, genre: genre, price: price, day: day, image: image }});
+    const conc = await(Concert.findById(req.params.id));
+    if(conc) {
+      await Concert.updateOne({ _id: req.params.id }, { $set: { performer: performer, genre: genre, price: price, day: day, image: image }});
       res.json({ message: 'OK' });
     }
     else res.status(404).json({ message: 'Not found...' });
@@ -58,8 +58,8 @@ exports.updateOne = async (req, res) => {
 exports.deleteOne = async (req, res) => {
 
   try {
-    const con = await(Concert.findById(req.params.id));
-    if(con) {
+    const conc = await(Concert.findById(req.params.id));
+    if(conc) {
       await Concert.deleteOne({ _id: req.params.id });
       res.json({ message: 'OK' });
     }
