@@ -3,13 +3,13 @@ const path = require('path');
 const cors = require('cors');
 const socket = require('socket.io');
 const mongoose = require('mongoose');
-
+const helmet = require('helmet');
 const testimonialsRoutes = require('./routes/testimonials.routes');
 const seatsRoutes = require('./routes/seats.routes');
 const concertsRoutes = require('./routes/concerts.routes');
 
 const app = express();
-
+app.use(helmet());
 app.use(
   cors({ origin: 'http://localhost:3000', methods: 'GET, POST, PUT, DELETE' })
 );
