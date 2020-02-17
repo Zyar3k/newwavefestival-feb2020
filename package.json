@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon server.js",
-    "build": "cd client && yarn install && yarn build"
+    "build": "cd client && yarn install && yarn build",
+    "test": "snyk test"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -16,5 +17,8 @@
     "nodemon": "^2.0.2",
     "socket.io": "^2.3.0",
     "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "snyk": "^1.291.0"
   }
 }
