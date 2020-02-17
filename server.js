@@ -36,7 +36,7 @@ app.use((req, res) => {
   res.status(404).send({message: '404 not found...'});
 });
 
-mongoose.connect('mongodb+srv://zyar3k:haslomongoDB@cluster0-y9wgt.mongodb.net/NewWaceDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS}@cluster0-y9wgt.mongodb.net/NewWaceDB`, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 
